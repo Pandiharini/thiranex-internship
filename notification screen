@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications - SecureTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Metropolis:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-scale:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#001f26",
+                      "surface": "#f9f9ff",
+                      "on-primary-container": "#dad7ff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "surface-container-highest": "#dce2f7",
+                      "surface-variant": "#dce2f7",
+                      "tertiary-container": "#885500",
+                      "on-background": "#141b2b",
+                      "surface-container-high": "#e1e8fd",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#ffddb8",
+                      "primary-container": "#4f46e5",
+                      "inverse-primary": "#c3c0ff",
+                      "on-secondary-container": "#006172",
+                      "background": "#f9f9ff",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#293040",
+                      "surface-tint": "#4d44e3",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "primary-fixed": "#e2dfff",
+                      "outline": "#777587",
+                      "surface-container": "#e9edff",
+                      "surface-dim": "#d3daef",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-surface": "#141b2b",
+                      "inverse-on-surface": "#edf0ff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#acedff",
+                      "surface-bright": "#f9f9ff",
+                      "on-surface-variant": "#464555",
+                      "tertiary": "#684000",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#3525cd",
+                      "secondary": "#00687a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "outline-variant": "#c7c4d8",
+                      "on-tertiary-container": "#ffd4a4",
+                      "secondary-container": "#57dffe",
+                      "surface-container-low": "#f1f3ff",
+                      "on-primary-fixed": "#0f0069"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "gutter": "16px",
+                      "margin-mobile": "20px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": ["inter"],
+                      "body-md": ["inter"],
+                      "headline-lg": ["metropolis"],
+                      "button-md": ["inter"],
+                      "headline-md": ["metropolis"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "button-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-background z-50">
+<div class="flex justify-between items-center h-16 px-margin-mobile w-full">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+<span class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim">SecureTask</span>
+</div>
+<div class="active-scale transition-transform cursor-pointer">
+<img alt="User Profile" class="w-10 h-10 rounded-full bg-surface-container-high object-cover" data-alt="A professional headshot of a person with a friendly expression, captured with high-end portrait photography style. The lighting is soft and even, highlighting modern corporate attire. The background is a clean, blurred office setting with cool blue and white tones, matching a sleek light-mode UI aesthetic. The overall mood is trustworthy, professional, and efficient." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8x3Zs8BRwzaJkcXcpmJ0JUqspzVyR0Kg4wONYj2EdoqOZ9IUzHqihSc3m9K2F1Nwd2BuIGopwRlgVy6FPyUaibVwEboxHCTx0Re8mEvQVnNh4-g1DRcqMMsa7TIB6TykGQBP1ADtKW7i5_wtxtGV4mjE_Y3FW6lRF6K6tPYpGQZkvFrWWgUp7CJ9sDDbuObbUyidb6tOUeWcBXGfQQPlSKFFPT899ncn6tP8Srub2G6gS_wbn315j8uZTpDJt5Xlnea1foAgJXp8"/>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile py-lg">
+<!-- Screen Title Section -->
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Notifications</h1>
+<p class="font-body-md text-on-surface-variant mt-xs">Stay updated on your workspace activity.</p>
+</div>
+<button class="font-button-md text-primary hover:underline transition-all duration-200 active:scale-95">
+                Mark all as read
+            </button>
+</div>
+<!-- Notification List -->
+<div class="space-y-md">
+<!-- Recent Unread Notification -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border-l-4 border-primary relative overflow-hidden group hover:bg-surface-container-low transition-colors duration-200 cursor-pointer">
+<div class="flex gap-md">
+<div class="bg-primary-container/10 p-sm rounded-lg flex items-center justify-center h-fit">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Reminder: Finish project report</h3>
+<span class="font-label-sm text-label-sm text-primary font-bold">10m ago</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-xs">Your quarterly security audit report is due by 5:00 PM today. Please review the final draft.</p>
+</div>
+</div>
+<div class="absolute right-2 bottom-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Task Assignment -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border-l-4 border-secondary relative group hover:bg-surface-container-low transition-colors duration-200 cursor-pointer">
+<div class="flex gap-md">
+<div class="bg-secondary-container/10 p-sm rounded-lg flex items-center justify-center h-fit">
+<span class="material-symbols-outlined text-secondary" data-icon="assignment_ind">assignment_ind</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">New Task Assigned</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h ago</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-xs">Sarah assigned you to "Database Encryption Migration". Priority: High.</p>
+</div>
+</div>
+</div>
+<!-- Earlier Notification (Read) -->
+<div class="bg-surface-container-lowest/50 rounded-xl p-md border border-outline-variant/30 opacity-80 group hover:opacity-100 hover:bg-surface-container-low transition-all duration-200 cursor-pointer">
+<div class="flex gap-md">
+<div class="bg-surface-container-high p-sm rounded-lg flex items-center justify-center h-fit">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface opacity-70">Task Completed</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3h ago</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-xs">User authentication module has been successfully deployed to production.</p>
+</div>
+</div>
+</div>
+<!-- Bento-style Weekly Insight -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-xl">
+<div class="bg-primary p-lg rounded-xl text-on-primary flex flex-col justify-between min-h-[160px]">
+<div>
+<span class="material-symbols-outlined text-3xl" data-icon="analytics">analytics</span>
+<h4 class="font-headline-md text-headline-md mt-sm">Weekly Productivity</h4>
+</div>
+<div class="flex items-baseline gap-xs">
+<span class="text-4xl font-bold">12%</span>
+<span class="font-label-sm opacity-80">increase this week</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-lg rounded-xl flex flex-col justify-between min-h-[160px] border border-outline-variant">
+<h4 class="font-headline-md text-headline-md text-on-surface">Upcoming Deadlines</h4>
+<div class="space-y-sm">
+<div class="flex justify-between font-label-sm">
+<span class="text-on-surface-variant">Auth Audit</span>
+<span class="text-error font-bold">Tomorrow</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden">
+<div class="bg-error w-4/5 h-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-safe bg-surface/80 dark:bg-background/80 backdrop-blur-md shadow-[0_-4px_12px_rgba(0,0,0,0.05)] h-[56px] z-50">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 transition-opacity active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Tasks -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 transition-opacity active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Tasks</span>
+</a>
+<!-- Notifications (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full hover:opacity-80 transition-opacity active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label-sm text-label-sm">Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:opacity-80 transition-opacity active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for notifications
+        document.querySelectorAll('.cursor-pointer').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.add('scale-[0.98]');
+                setTimeout(() => {
+                    this.classList.remove('scale-[0.98]');
+                }, 100);
+            });
+        });
+
+        // Mark all as read visual feedback
+        const markAllBtn = document.querySelector('button');
+        markAllBtn.addEventListener('click', function() {
+            const unreadLine = document.querySelector('.border-primary');
+            if (unreadLine) {
+                unreadLine.classList.replace('border-primary', 'border-outline-variant/30');
+                unreadLine.classList.add('opacity-80');
+                this.innerText = 'All Caught Up!';
+                this.classList.remove('text-primary');
+                this.classList.add('text-on-surface-variant');
+            }
+        });
+    </script>
+</body></html>
