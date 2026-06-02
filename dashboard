@@ -1,0 +1,279 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SecureTask - Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Metropolis:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=inter:wght@100..900&amp;family=metropolis:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#4f46e5",
+                        "on-tertiary-container": "#ffd4a4",
+                        "tertiary-container": "#885500",
+                        "tertiary": "#684000",
+                        "surface-bright": "#f9f9ff",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface-container-low": "#f1f3ff",
+                        "on-primary-fixed": "#0f0069",
+                        "background": "#f9f9ff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d3daef",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary-fixed": "#ffddb8",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#001f26",
+                        "surface-variant": "#dce2f7",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#00687a",
+                        "outline-variant": "#c7c4d8",
+                        "primary": "#3525cd",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary-fixed": "#2a1700",
+                        "outline": "#777587",
+                        "on-surface-variant": "#464555",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-secondary-container": "#006172",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#141b2b",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#57dffe",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#dce2f7",
+                        "surface-tint": "#4d44e3",
+                        "inverse-surface": "#293040",
+                        "on-primary-container": "#dad7ff",
+                        "surface-container-high": "#e1e8fd",
+                        "secondary-fixed": "#acedff",
+                        "on-background": "#141b2b",
+                        "surface-container": "#e9edff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xs": "4px"
+                    },
+                    fontFamily: {
+                        "body-md": ["inter"],
+                        "headline-md": ["metropolis"],
+                        "headline-lg": ["metropolis"],
+                        "button-md": ["inter"],
+                        "label-sm": ["inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+        }
+        h1, h2, h3 {
+            font-family: 'Metropolis', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- Top AppBar (Simplified following Shared Component Logic for Process/Dashboard) -->
+<header class="sticky top-0 z-10 flex items-center justify-between bg-surface-container-lowest px-margin-mobile py-md shadow-sm">
+<div class="flex items-center gap-sm">
+<div class="size-10 overflow-hidden rounded-full border border-outline-variant bg-surface-variant" data-alt="A professional close-up studio portrait of a young male professional in his late 20s with a warm, confident expression. The lighting is bright and clean, typical of a modern corporate light-mode design system. He is set against a soft, out-of-focus office background with hints of indigo and white. The aesthetic is sharp, reliable, and friendly, matching a high-end productivity application interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-O-JkS0gVu4XKUEOlwsvDgk2lPz38dlEJ_mkyaytjZ9rXeGQEArPowtmW_-7EIxxa6E4vY15Pa1f_xowDpaoX40v5B-JVTxMAmpfBsdgeGEqiPUnqxm5jQw2GZA2gKEgbc-8XVI27vXsiz2cvWQ9S0oRQ58DfXPZtOKDeuRc6X1Bh-dNWuXXh5aiNpaWYjRkYSzzlCo7qERIpqv_IahSHcaEiEStDhGhPPGmqdIwdpRrfeSZl-aZoarLoOsAqUIcGniC4o81C1Ug'); background-size: cover; background-position: center;">
+</div>
+<span class="text-headline-md text-on-surface">SecureTask</span>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+</header>
+<main class="flex-1 px-margin-mobile pb-24">
+<!-- Welcome Message -->
+<section class="mt-lg">
+<h1 class="text-headline-lg text-on-surface">Hello, Harini!</h1>
+<p class="text-body-md text-on-surface-variant mt-xs">You're making great progress today.</p>
+</section>
+<!-- Progress Summary Card -->
+<section class="mt-lg">
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-lg shadow-md text-on-primary">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm uppercase tracking-wider opacity-90">Daily Goal</span>
+<h2 class="text-headline-md">4 of 6 tasks completed</h2>
+<p class="text-body-md mt-sm max-w-[200px] opacity-80">You're almost there! Keep up the great work.</p>
+</div>
+<!-- Circular Progress -->
+<div class="relative flex size-24 items-center justify-center">
+<svg class="size-full transform -rotate-90">
+<circle cx="48" cy="48" fill="transparent" r="40" stroke="rgba(255,255,255,0.2)" stroke-width="8"></circle>
+<circle class="text-white" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="83.7" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<span class="absolute text-headline-md">66%</span>
+</div>
+</div>
+<!-- Abstract Design Decor -->
+<div class="absolute -bottom-4 -right-4 size-24 rounded-full bg-white/10 blur-xl"></div>
+</div>
+</section>
+<!-- Today's Tasks -->
+<section class="mt-xl">
+<div class="flex items-center justify-between mb-md">
+<h2 class="text-headline-md text-on-surface">Today's Tasks</h2>
+<button class="text-button-md text-primary hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Task 1 -->
+<div class="group flex items-center gap-md rounded-lg bg-surface-container-lowest p-md shadow-sm border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex size-6 items-center justify-center rounded border-2 border-outline-variant group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 text-primary">check</span>
+</div>
+<div class="flex-1">
+<h3 class="text-body-md font-semibold text-on-surface">Update security protocols</h3>
+<div class="mt-xs flex items-center gap-sm">
+<span class="rounded bg-error-container px-sm py-[2px] text-label-sm text-on-error-container">High Priority</span>
+<span class="text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM
+                            </span>
+</div>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="group flex items-center gap-md rounded-lg bg-surface-container-lowest p-md shadow-sm border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex size-6 items-center justify-center rounded border-2 border-primary bg-primary">
+<span class="material-symbols-outlined text-[18px] text-white">check</span>
+</div>
+<div class="flex-1 opacity-60">
+<h3 class="text-body-md font-semibold text-on-surface line-through">Review client dashboard</h3>
+<div class="mt-xs flex items-center gap-sm">
+<span class="rounded bg-secondary-container px-sm py-[2px] text-label-sm text-on-secondary-container">Medium</span>
+<span class="text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 11:30 AM
+                            </span>
+</div>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="group flex items-center gap-md rounded-lg bg-surface-container-lowest p-md shadow-sm border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex size-6 items-center justify-center rounded border-2 border-outline-variant group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] opacity-0 text-primary">check</span>
+</div>
+<div class="flex-1">
+<h3 class="text-body-md font-semibold text-on-surface">Sync team on Q4 goals</h3>
+<div class="mt-xs flex items-center gap-sm">
+<span class="rounded bg-tertiary-container px-sm py-[2px] text-label-sm text-on-tertiary-container">Low</span>
+<span class="text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 02:00 PM
+                            </span>
+</div>
+</div>
+</div>
+<!-- Task 4 -->
+<div class="group flex items-center gap-md rounded-lg bg-surface-container-lowest p-md shadow-sm border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<div class="flex size-6 items-center justify-center rounded border-2 border-outline-variant group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] opacity-0 text-primary">check</span>
+</div>
+<div class="flex-1">
+<h3 class="text-body-md font-semibold text-on-surface">Submit expense report</h3>
+<div class="mt-xs flex items-center gap-sm">
+<span class="rounded bg-secondary-container px-sm py-[2px] text-label-sm text-on-secondary-container">Medium</span>
+<span class="text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 04:30 PM
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 z-20 flex size-14 items-center justify-center rounded-xl bg-primary-container text-white shadow-lg shadow-primary-container/30 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<!-- Bottom Navigation Bar (Shared Component Implementation) -->
+<nav class="fixed bottom-0 left-0 right-0 z-30 bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="fill">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">house</span>
+</div>
+<p class="text-label-sm">Home</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="List" data-size="24px">
+<span class="material-symbols-outlined">checklist</span>
+</div>
+<p class="text-label-sm">Tasks</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors relative" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="Bell" data-size="24px">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-label-sm">Notifications</p>
+<!-- Badge -->
+<span class="absolute top-0 right-1 size-2 rounded-full bg-error"></span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center" data-icon="User" data-size="24px">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-label-sm">Profile</p>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.cursor-pointer').forEach(task => {
+            task.addEventListener('click', function() {
+                const checkbox = this.querySelector('.material-symbols-outlined.opacity-0');
+                if (checkbox) {
+                    checkbox.classList.remove('opacity-0');
+                    checkbox.parentElement.classList.add('bg-primary', 'border-primary');
+                    checkbox.classList.add('text-white');
+                    this.querySelector('h3').classList.add('line-through');
+                    this.classList.add('opacity-60');
+                }
+            });
+        });
+
+        // Atmosphere effect: Pulse for FAB
+        setInterval(() => {
+            const fab = document.querySelector('.bg-primary-container');
+            fab.classList.add('ring-4', 'ring-primary-container/20');
+            setTimeout(() => {
+                fab.classList.remove('ring-4', 'ring-primary-container/20');
+            }, 1000);
+        }, 5000);
+    </script>
+
+
+</body></html>
