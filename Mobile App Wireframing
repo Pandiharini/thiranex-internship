@@ -1,0 +1,261 @@
+```json
+{
+  "project": {
+    "title": "Mobile App Wireframing Project",
+    "app_name": "SecureTask",
+    "app_type": "Task Management & Productivity",
+    "platform": ["Android", "iOS"],
+    "design_stage": "Low-Fidelity Wireframe",
+    "goal": "Design a user-friendly productivity app that helps users manage daily tasks, reminders, and schedules efficiently."
+  },
+
+  "design_system": {
+    "theme": "Minimal Modern",
+    "style": "Clean, Professional, User-Centered",
+    "layout_type": "Card-Based Layout",
+    "grid_system": "8pt Grid",
+    "dark_mode_support": true,
+
+    "colors": {
+      "primary": "#4F46E5",
+      "secondary": "#06B6D4",
+      "accent": "#F59E0B",
+      "background_light": "#FFFFFF",
+      "background_dark": "#111827",
+      "surface": "#F3F4F6",
+      "text_primary": "#111827",
+      "text_secondary": "#6B7280",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "border": "#E5E7EB"
+    },
+
+    "typography": {
+      "font_family": "Poppins",
+      "heading_size": "24px",
+      "subheading_size": "18px",
+      "body_size": "14px",
+      "button_text_size": "16px",
+      "font_weights": {
+        "regular": 400,
+        "medium": 500,
+        "bold": 700
+      }
+    },
+
+    "components": {
+      "buttons": {
+        "shape": "Rounded",
+        "corner_radius": "12px",
+        "primary_button_color": "#4F46E5",
+        "secondary_button_color": "#E5E7EB"
+      },
+
+      "cards": {
+        "shadow": "Soft",
+        "padding": "16px",
+        "border_radius": "16px"
+      },
+
+      "icons": {
+        "style": "Outlined",
+        "size": "24px"
+      },
+
+      "navigation": {
+        "type": "Bottom Navigation Bar",
+        "tabs": ["Home", "Tasks", "Notifications", "Profile"]
+      }
+    }
+  },
+
+  "user_research": {
+    "target_audience": [
+      "College students",
+      "Working professionals",
+      "Freelancers"
+    ],
+
+    "user_needs": [
+      "Easy task management",
+      "Quick reminders",
+      "Simple navigation",
+      "Daily productivity tracking",
+      "Dark mode support"
+    ],
+
+    "pain_points": [
+      "Complex UI in productivity apps",
+      "Too many unnecessary features",
+      "Difficulty tracking priorities"
+    ],
+
+    "research_methods": [
+      "Online surveys",
+      "User interviews",
+      "Competitor analysis"
+    ]
+  },
+
+  "personas": [
+    {
+      "name": "Harini",
+      "age": 21,
+      "occupation": "Cybersecurity Student",
+      "goals": [
+        "Track assignments",
+        "Manage study schedule",
+        "Receive reminders"
+      ],
+      "frustrations": [
+        "Missing deadlines",
+        "Confusing app interfaces"
+      ]
+    },
+
+    {
+      "name": "Arun",
+      "age": 28,
+      "occupation": "Software Engineer",
+      "goals": [
+        "Organize office tasks",
+        "Monitor project deadlines"
+      ],
+      "frustrations": [
+        "Overloaded notifications",
+        "Poor task categorization"
+      ]
+    }
+  ],
+
+  "user_flow": {
+    "flow_name": "Task Creation Flow",
+
+    "steps": [
+      "Open App",
+      "Login/Register",
+      "Navigate to Dashboard",
+      "Tap Add Task Button",
+      "Enter Task Details",
+      "Set Reminder & Priority",
+      "Save Task",
+      "View Updated Task List"
+    ]
+  },
+
+  "wireframes": [
+    {
+      "screen": "Splash Screen",
+      "elements": [
+        "App Logo Centered",
+        "Background Gradient",
+        "Loading Indicator"
+      ]
+    },
+
+    {
+      "screen": "Login Screen",
+      "elements": [
+        "Email Input",
+        "Password Input",
+        "Login Button",
+        "Forgot Password Link",
+        "Social Login Buttons"
+      ]
+    },
+
+    {
+      "screen": "Home Dashboard",
+      "elements": [
+        "Welcome Message",
+        "Today's Tasks",
+        "Progress Summary",
+        "Quick Add Button",
+        "Bottom Navigation"
+      ]
+    },
+
+    {
+      "screen": "Task Details",
+      "elements": [
+        "Task Title",
+        "Description Field",
+        "Due Date Picker",
+        "Priority Selector",
+        "Save Button"
+      ]
+    },
+
+    {
+      "screen": "Notifications",
+      "elements": [
+        "Reminder Cards",
+        "Task Alerts",
+        "Mark as Read Option"
+      ]
+    },
+
+    {
+      "screen": "Profile Screen",
+      "elements": [
+        "Profile Picture",
+        "User Information",
+        "Dark Mode Toggle",
+        "Settings Menu",
+        "Logout Button"
+      ]
+    }
+  ],
+
+  "design_thinking_process": {
+    "empathize": [
+      "Understand user productivity challenges",
+      "Identify usability issues in existing apps"
+    ],
+
+    "define": [
+      "Users need a clean and simple productivity app"
+    ],
+
+    "ideate": [
+      "Sketch low-fidelity layouts",
+      "Create multiple navigation concepts"
+    ],
+
+    "prototype": [
+      "Develop wireframes in Figma",
+      "Create clickable prototypes"
+    ],
+
+    "test": [
+      "Conduct usability testing",
+      "Collect feedback from students and professionals"
+    ]
+  },
+
+  "figma_guidelines": {
+    "frame_size": {
+      "width": 390,
+      "height": 844
+    },
+
+    "auto_layout": true,
+    "constraints": "Responsive",
+    "prototype_interactions": [
+      "Button Click Navigation",
+      "Swipe Gestures",
+      "Modal Popups"
+    ]
+  },
+
+  "deliverables": [
+    "User Research Documentation",
+    "User Personas",
+    "User Flow Diagram",
+    "Low-Fidelity Wireframes",
+    "Clickable Prototype",
+    "Design Thinking Report"
+  ]
+}
+```
