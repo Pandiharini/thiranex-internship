@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SaaSFlow | Redefining Workflow Efficiency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3fe",
+                        "on-tertiary-container": "#ffede6",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#dae2fd",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e2ed",
+                        "background": "#faf8ff",
+                        "surface-dim": "#d9d9e5",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary": "#565e74",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "primary": "#004ac6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434655",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "outline": "#737686",
+                        "surface-container-high": "#e7e7f3",
+                        "surface-bright": "#faf8ff",
+                        "on-background": "#191b23",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface": "#191b23",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e1e2ed",
+                        "inverse-surface": "#2e3039",
+                        "inverse-primary": "#b4c5ff",
+                        "surface": "#faf8ff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#bc4800",
+                        "primary-container": "#2563eb",
+                        "on-primary-fixed": "#00174b",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container": "#ededf9",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-fixed": "#360f00",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-tint": "#0053db",
+                        "on-primary-container": "#eeefff",
+                        "tertiary": "#943700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-xl": "64px",
+                        "stack-lg": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "hero-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-bold": ["Inter"],
+                        "body-main": ["Inter"],
+                        "subheading": ["Plus Jakarta Sans"],
+                        "body-small": ["Inter"],
+                        "section-title": ["Plus Jakarta Sans"],
+                        "hero-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "hero-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-main": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "subheading": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-small": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "section-title": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "hero-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-main selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-subheading text-subheading font-bold text-on-surface">SaaSFlow</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-bold text-label-bold text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="#">Platform</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-300" href="#">Features</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-300" href="#">Solutions</a>
+<a class="font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-300" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="hidden sm:block font-label-bold text-label-bold text-secondary hover:text-primary transition-colors duration-300">Log In</button>
+<button class="bg-primary-container text-on-primary-container px-stack-md py-stack-sm rounded-lg font-label-bold text-label-bold hover:scale-105 active:scale-95 transition-all">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center min-h-[716px]">
+<div class="reveal">
+<div class="inline-flex items-center gap-unit bg-primary-fixed px-stack-sm py-1 rounded-full mb-stack-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-bold text-[12px] text-on-primary-fixed-variant tracking-wider uppercase">New Version 2.0 Out Now</span>
+</div>
+<h1 class="font-hero-lg text-hero-lg text-on-surface mb-stack-md">
+                        Streamline Your Workflow with <span class="text-primary">SaaSFlow</span>
+</h1>
+<p class="font-subheading text-subheading text-secondary mb-stack-xl max-w-lg">
+                        The modern platform for high-performance teams to collaborate, track, and scale effortlessly.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-stack-md">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-bold text-label-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                            Start Free Trial
+                        </button>
+<button class="border-[1.5px] border-primary text-primary px-8 py-4 rounded-xl font-label-bold text-label-bold hover:bg-primary/5 transition-colors">
+                            Book a Demo
+                        </button>
+</div>
+<div class="mt-stack-xl flex items-center gap-stack-md grayscale opacity-50">
+<span class="font-label-bold text-body-small">Trusted by:</span>
+<div class="flex gap-stack-lg items-center">
+<span class="font-bold text-subheading tracking-tight">VERGE</span>
+<span class="font-bold text-subheading tracking-tight">LOGOS</span>
+<span class="font-bold text-subheading tracking-tight">CYBER</span>
+</div>
+</div>
+</div>
+<div class="relative reveal delay-100">
+<div class="absolute -z-10 w-full h-full bg-primary/5 blur-3xl rounded-full"></div>
+<div class="glass-card rounded-[24px] p-stack-sm shadow-2xl border-outline-variant/20">
+<img alt="Dashboard Preview" class="rounded-[16px] w-full shadow-inner" data-alt="A high-resolution screenshot of a modern SaaS dashboard interface with clean data visualizations, sleek progress bars, and a minimalist sidebar. The UI features a soft professional blue and white color scheme with elegant typography and subtle drop shadows. The scene is bright and airy, representing a sophisticated high-tech software environment for professional teams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjw92kEmMUzUigJ1yqmBmN_47uz_UREXl6MXLk8ayfcvTIT-VNkx4bWiiMqbOb9HUxpfiO_2U4eWBATQAPEXnBOStuIUKBGWe5dZX_tuJIGDNAu_anX98qnv76HML78sAaith-7zZUb99iDIjdbAU91uMu0yWxuiqsMjWGdQrRZhFFA1QZWOtkxpKvRMT_geq7gqAGnjvBRDzvcGuWXpavtwKzu4MEufjcV75a8gDqM7ph5rwtqm11JVIjBIVvNZYUdvNPxYRMAUg"/>
+</div>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 glass-card p-stack-md rounded-xl shadow-xl border border-white/50 flex items-center gap-stack-md animate-bounce">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="font-label-bold text-[12px] text-secondary">Efficiency</p>
+<p class="font-bold text-on-surface">+240%</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="bg-surface-container-low py-stack-xl relative overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-stack-xl reveal">
+<h2 class="font-section-title text-section-title text-on-surface mb-stack-sm">Powerful Tools for Powerful Teams</h2>
+<p class="font-body-main text-body-main text-secondary max-w-2xl mx-auto">
+                        Everything you need to manage complex projects and high-growth operations without the overhead.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature Card 1 -->
+<div class="glass-card p-stack-xl rounded-[16px] reveal hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-stack-lg group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<h3 class="font-subheading text-subheading text-on-surface mb-stack-sm">Team Collaboration</h3>
+<p class="font-body-small text-body-small text-secondary">
+                            Real-time editing, shared workspaces, and context-aware comments that keep everyone aligned and focused.
+                        </p>
+</div>
+<!-- Feature Card 2 -->
+<div class="glass-card p-stack-xl rounded-[16px] reveal delay-100 hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-stack-lg group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+</div>
+<h3 class="font-subheading text-subheading text-on-surface mb-stack-sm">Deep Insights</h3>
+<p class="font-body-small text-body-small text-secondary">
+                            Custom dashboards and automated reports that turn raw data into actionable growth strategies.
+                        </p>
+</div>
+<!-- Feature Card 3 -->
+<div class="glass-card p-stack-xl rounded-[16px] reveal delay-200 hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+<div class="w-14 h-14 bg-primary-container/10 rounded-xl flex items-center justify-center mb-stack-lg group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="font-subheading text-subheading text-on-surface mb-stack-sm">Enterprise Security</h3>
+<p class="font-body-small text-body-small text-secondary">
+                            Bank-grade encryption, SOC2 compliance, and granular permissions to protect your mission-critical data.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Bento Grid Section -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-gutter h-auto md:h-[600px]">
+<div class="md:col-span-8 bg-inverse-surface rounded-3xl p-stack-xl text-surface-bright flex flex-col justify-end reveal">
+<h3 class="font-hero-lg text-hero-lg-mobile md:text-section-title mb-stack-sm">Unmatched Performance</h3>
+<p class="font-body-main text-surface-variant max-w-md">Our proprietary engine processes data 10x faster than legacy competitors, giving your team the edge.</p>
+</div>
+<div class="md:col-span-4 bg-primary-container rounded-3xl p-stack-xl text-on-primary-container reveal delay-100">
+<div class="w-full h-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-[64px] mb-stack-md">rocket_launch</span>
+<h3 class="font-subheading text-subheading mb-stack-sm">Scale Faster</h3>
+<p class="font-body-small opacity-90">Engineered for growth, from startup to unicorn.</p>
+</div>
+</div>
+<div class="md:col-span-4 border border-outline-variant rounded-3xl p-stack-xl flex flex-col justify-between reveal delay-150">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-2 border-white bg-surface-dim"></div>
+<div class="w-12 h-12 rounded-full border-2 border-white bg-primary-fixed"></div>
+<div class="w-12 h-12 rounded-full border-2 border-white bg-secondary-fixed"></div>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface">5,000+ Teams</h4>
+<p class="font-body-small text-secondary">Switching to SaaSFlow monthly.</p>
+</div>
+</div>
+<div class="md:col-span-8 glass-card border border-outline-variant rounded-3xl p-stack-xl flex items-center gap-gutter reveal delay-200">
+<div class="hidden sm:block w-1/3 h-full rounded-2xl overflow-hidden">
+<img alt="Analytics" class="w-full h-full object-cover" data-alt="A minimalist close-up of a data analysis report with sleek bar charts and smooth gradients in deep blue and turquoise tones. The lighting is soft and professional, emphasizing a clean and organized workspace. The atmosphere is one of high-tech precision and modern financial clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGm9CFJOaknzWtvENP7Yeyk_POgBPSy5CQFNXkSnijzlkwQZULUHi1_8PIjhWxGVDlvgpvBTNTg7O3fQrs6CDAiZNGGlujVaSIP2Ise42Q8-sRIUA2eGF1iPSOqnvuTnNtFTmnlbaDG1v9q6KBzfQat85tfqtJ6v25zqZGcThNDs5bEOG7GTmwxo_DWOdkxcMVwSL9eX3RK0a32J3HWdZgB7E3IujvytWFbZxB6LfkF270v3enXwhwYGSQN6XVZQ1Olchz4y7CJjo"/>
+</div>
+<div class="flex-1">
+<h3 class="font-section-title text-section-title mb-stack-sm">Global Distribution</h3>
+<p class="font-body-main text-secondary">Collaborate across timezones with zero latency and automatic synchronization.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-xl px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-primary text-on-primary rounded-[32px] p-stack-xl text-center relative overflow-hidden reveal">
+<div class="relative z-10">
+<h2 class="font-hero-lg text-hero-lg-mobile md:text-hero-lg mb-stack-md">Ready to optimize your flow?</h2>
+<p class="font-subheading text-subheading mb-stack-xl opacity-90 max-w-2xl mx-auto">
+                        Join thousands of high-performance teams already using SaaSFlow to deliver excellence.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-stack-md">
+<button class="bg-surface-bright text-primary px-8 py-4 rounded-xl font-label-bold text-label-bold hover:bg-white transition-colors">
+                            Get Started for Free
+                        </button>
+<button class="border border-white/30 text-white px-8 py-4 rounded-xl font-label-bold text-label-bold hover:bg-white/10 transition-colors">
+                            Talk to Sales
+                        </button>
+</div>
+</div>
+<!-- Decorative Circle -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] border border-white/10 rounded-full"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[300px] h-[300px] border border-white/10 rounded-full"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-xl bg-inverse-surface">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-4">
+<div class="font-subheading text-subheading text-surface-bright mb-stack-md">SaaSFlow</div>
+<p class="font-body-small text-surface-variant max-w-xs">
+                    Building the future of team coordination, one workflow at a time.
+                </p>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-bold text-surface-bright mb-stack-md">Product</h4>
+<ul class="space-y-stack-sm">
+<li><a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Features</a></li>
+<li><a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Integrations</a></li>
+<li><a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-bold text-surface-bright mb-stack-md">Resources</h4>
+<ul class="space-y-stack-sm">
+<li><a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Documentation</a></li>
+<li><a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Help Center</a></li>
+<li><a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h4 class="font-label-bold text-surface-bright mb-stack-md">Stay Updated</h4>
+<div class="flex gap-stack-sm">
+<input class="bg-surface-variant/10 border border-outline-variant/30 rounded-lg px-stack-md py-2 text-surface-bright text-body-small w-full focus:ring-1 focus:ring-primary outline-none" placeholder="Email address" type="email"/>
+<button class="bg-primary text-on-primary px-stack-md py-2 rounded-lg font-label-bold text-label-bold">Join</button>
+</div>
+</div>
+<div class="md:col-span-12 pt-stack-xl mt-stack-xl border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<p class="font-body-small text-surface-variant">© 2024 SaaSFlow Inc. All rights reserved.</p>
+<div class="flex gap-stack-lg">
+<a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Security</a>
+<a class="font-body-small text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Status</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Navbar Scroll Effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('py-4');
+            }
+        });
+    </script>
+</body></html>
