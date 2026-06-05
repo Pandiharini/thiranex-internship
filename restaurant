@@ -1,0 +1,195 @@
+import { ImageWithFallback } from './figma/ImageWithFallback';
+
+const pillars = [
+  { num: '01', title: 'Craft', desc: 'Every plate is assembled with precision — seasonal produce sourced within 50 miles of our kitchen.' },
+  { num: '02', title: 'Heritage', desc: 'Rooted in classical French technique, reinterpreted for the contemporary palate.' },
+  { num: '03', title: 'Ritual', desc: 'Dining at La Maison is an occasion. We curate each visit with intention and care.' },
+];
+
+export function About() {
+  return (
+    <section
+      id="about"
+      style={{ background: '#0c0b09', paddingTop: '8rem', paddingBottom: '8rem' }}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* Section label */}
+        <div className="flex items-center gap-4 mb-20">
+          <div style={{ width: '40px', height: '1px', background: '#c9a84c' }} />
+          <span
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.65rem',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              color: '#c9a84c',
+            }}
+          >
+            Our Story
+          </span>
+        </div>
+
+        {/* Asymmetric two-column grid */}
+        <div
+          className="grid lg:grid-cols-12 gap-16 lg:gap-0 items-start"
+        >
+          {/* Left: Image stack */}
+          <div className="lg:col-span-5 relative">
+            {/* Main image */}
+            <div
+              className="relative overflow-hidden"
+              style={{ height: '520px' }}
+            >
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1572715376701-98568319fd0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGVmJTIwY29va2luZyUyMGtpdGNoZW58ZW58MXx8fHwxNzgwNTc2ODMyfDA&ixlib=rb-4.1.0&q=80&w=800"
+                alt="Chef at work"
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.85) saturate(0.9)' }}
+              />
+              {/* Subtle gold tint overlay */}
+              <div
+                className="absolute inset-0"
+                style={{ background: 'linear-gradient(to bottom, transparent 60%, rgba(12,11,9,0.6) 100%)' }}
+              />
+            </div>
+
+            {/* Accent card floating over */}
+            <div
+              className="absolute -bottom-6 -right-4 lg:-right-8"
+              style={{
+                background: '#161410',
+                border: '1px solid rgba(201, 168, 76, 0.2)',
+                padding: '1.5rem 2rem',
+                width: '200px',
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '2.8rem',
+                  color: '#c9a84c',
+                  fontWeight: 400,
+                  lineHeight: 1,
+                }}
+              >
+                15
+              </div>
+              <div
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.6rem',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: '#8a8070',
+                  marginTop: '0.4rem',
+                }}
+              >
+                Years of Excellence
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Text content */}
+          <div className="lg:col-span-6 lg:col-start-7 pt-0 lg:pt-10">
+            <h2
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.8rem, 4vw, 4.5rem)',
+                fontWeight: 400,
+                color: '#f0ebe0',
+                lineHeight: 1.1,
+                marginBottom: '2rem',
+              }}
+            >
+              Where every meal
+              <br />
+              <em style={{ fontStyle: 'italic', color: '#c9a84c' }}>becomes memory</em>
+            </h2>
+
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                color: '#8a8070',
+                fontSize: '0.95rem',
+                lineHeight: 1.85,
+                fontWeight: 300,
+                marginBottom: '1.2rem',
+              }}
+            >
+              Welcome to La Maison — where culinary artistry meets genuine hospitality.
+              Since 2010, we have been dedicated to creating dining experiences that celebrate
+              the finest ingredients and time-honored technique.
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                color: '#8a8070',
+                fontSize: '0.95rem',
+                lineHeight: 1.85,
+                fontWeight: 300,
+                marginBottom: '3.5rem',
+              }}
+            >
+              Our chefs draw from classical French tradition while honoring the
+              produce of California — a dialogue between heritage and place,
+              rendered on the plate with quiet confidence.
+            </p>
+
+            {/* Pillars */}
+            <div className="flex flex-col gap-0">
+              {pillars.map((pillar, i) => (
+                <div
+                  key={i}
+                  className="flex gap-6 py-5"
+                  style={{
+                    borderTop: '1px solid rgba(201, 168, 76, 0.1)',
+                    borderBottom: i === pillars.length - 1 ? '1px solid rgba(201, 168, 76, 0.1)' : 'none',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.65rem',
+                      color: '#c9a84c',
+                      letterSpacing: '0.1em',
+                      paddingTop: '0.2rem',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {pillar.num}
+                  </span>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        color: '#f0ebe0',
+                        fontSize: '0.85rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        marginBottom: '0.3rem',
+                      }}
+                    >
+                      {pillar.title}
+                    </div>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        color: '#8a8070',
+                        fontSize: '0.85rem',
+                        lineHeight: 1.7,
+                        fontWeight: 300,
+                      }}
+                    >
+                      {pillar.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
